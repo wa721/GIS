@@ -1,0 +1,17 @@
+With the set of points in A, join each point to every other point with a point-point (PP) edge. 
+
+For all PP edges, if any edges intersect, delete the longer of the edges.
+Generate midpoints on each of the edges.
+Join each midpoint to each other midpoint with a midpoint-midpoint (MPMP) edge.
+For all of the MPMP edges, if any of these edges intersect a PP edge, delete the MPMP edge.
+For all shapes, if any shapes that have a vertex that is one of the points in the set     of original points (A), allocate that shape to that point.
+For all remaining shapes, find the centroid of each shape and create edges between each vertex and the centroid of that same shape.
+For all unallocated shapes, allocate the shapes to the same point as the shape that shares the edge opposite the angle at the centroid.
+For all vertices on the boundary consisting of only straight edges and joining vertices, find the midpoint (MP*) of each boundary edge.
+Make an edge from the midpoint if each boundary edge (MP*) to each midpoint such that no PP edge is intersected other than at MP.
+If any MP*MP edges intersect other MP*MP edges other than at MP points, only keep the shortest edge of the intersecting edges at an intersection.
+Repeat 6.
+Join all adjacent unallocated shapes by deleting common edges.
+Bisect each unallocated shape with an edge perpendicular to the PP edge on which the MP vertex lies.
+Create a set of unallocated shapes.
+Allocate each shape in the unallocated shape set to the point within A that the shape that shares a common edge with the unallocated shape in question is allocated, such that no shapes in the set of previously defined set of unallocated shapes is used for allocation of other shapes within the set.
