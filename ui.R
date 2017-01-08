@@ -1,40 +1,64 @@
+#
+# This is the User Interface Script. It controls what the users are presented with. 
+# 
+# To start the application the "Run App" button should be clicked. This is above the
+#  script and may not appear until the shiny package is installed.
+#
+#......................................................................................
+#
+
 fluidPage(
-  titlePanel("Welcome to the London Transport Infrastructure Analysis Platform"),
+  titlePanel(
+    h2("Welcome to the Transport Infrastructure Information Platform: London Tube Network Edition.",align = "centre")
+    ),
   
   sidebarLayout(
-    sidebarPanel(
-      h1("Citywide Relationships"),
-      selectInput("dependentVariable","Which social index would you like to assess?", choices = list("Mean Household Income"=1,"Mean Age"=2,"Household Car Ownership"=3,"Population Density"=4,"Employment Rate"=5),selected = NULL,selectize=TRUE),
-      sliderInput("alpha","How sure do you want to be about the results?",50,99.99,80, step = 0.01, round = FALSE, format = "#,##0.#####", locale = "us", ticks = TRUE, animate = FALSE),
-      h6("You can never reach 100% certainty with these models, sorry"),
-      plotOutput("relationPlot"),
-      textOutput("relation"),
-      textOutput("Alpha")
-    ),
     
+    sidebarPanel(
+      h2("Citywide Relationships"),
+      h6("There are some extreme data points that may have affected the reliability of the relationships presented below. To improve their reliability, theses extreme points are removed from consideration. This is standard practice in statistics."),
+      textOutput("pointSelect"),
+      plotOutput("relationPlot"),
+      h1(" ",align="center"),
+      h5(textOutput("relation"),align = "center"),
+      h1(" ",align="center"),
+      sliderInput("alpha","How sure do you want to be about the results? You can never reach 100% certainty with these models, sorry",75,99.99,75, step = 0.01, round = FALSE, locale = "us", ticks = TRUE, animate = FALSE),
+      h1(" ",align = "center"),
+      h6(textOutput("Alpha")),
+      h1(" ",align = "center"),
+      h6("Scientists generally like to be at least 95% sure before suggesting that relationships 
+            might actually exist. If they can only be less than 95% sure, scientists usually won't 
+         say that a relationship exists.")
+    ),
+  
     mainPanel(
       h1("Map",algin="center"),
+      selectInput("dependentVariable","Which social index would you like to assess?", 
+                  choices = list("Mean Household Income"=1,
+                                 "Mean Age"=2,
+                                 "Household Car Ownership"=3,
+                                 "Population"=4,
+                                 "Unemployment"=5,
+                                 "Bike Use" = 6,
+                                 "House Price" = 7,
+                                 "Number of Employed People" = 8,
+                                 "Percentage of Black, Asian and/or Minority Ethnicity People"= 9,
+                                 "Percentage of Dwellings That Are Social Housing"=10,
+                                 "Percentage of Population on Job Seekers Allowance"=11,
+                                 "Voter Turnout"=12,
+                                 "Number of Working Age People"=13,
+                                 "Average Deprivation Rank"=14,
+                                 "Crime Rate"=15
+                                 ),selected = NULL,selectize=TRUE),
       h1(" ",align="center"),
-      textOutput("selectionNotification"),
-      h1(" ",align="center"),
-      h4("Public Transport Access Level (PTAL)", align = "left"),
-      plotOutput("PTAL"),
-      textOutput("dependentPlotTitle"),
-      plotOutput("DEPVAR")
-      
-      
-      #h4("Car Ownership per Household", align = "center"),
-      #img(src="cars.png",collapse = " "),height = 390,width=495,align="center"),
-      #h4("Employment Rate", align = "center"),
-      #img(src="employ.png",height = 390,width=495,align="center"),
-      #h4("Mean Household Income", align = "center"),
-      #img(src="inc.png",height = 390,width=495,align="center"),
-      #h4("Mean Age", align = "center"),
-      #img(src="mage.png",height = 390,width=495,align="center"),
-      #h4("Population Density", align = "center"),
-      #img(src="cars.png",height = 390,width=495,align="center"),
-      #h4("Low Resolution PTAL", align = "center"),
-      #img(src="PTALm.png",height = 390,width=495,align="center")
+      h5(textOutput("selectionNotification"),align="left"),
+      img(src="northSign.jpg", width = "5%", height = "5%",align = "right"),#source: https://s-media-cache-ak0.pinimg.com/originals/6a/13/8a/6a138ac687562414bdfcf7395d0dfae8.jpg
+      #textOutput("selectionNotification2"),
+      #textOutput("selectionNotification3"),
+      #textOutput("selectionNotification4"),
+      leafletOutput(outputId = "zoomPlot"),
+      h6(textOutput("legendTitle"),align = "left"),
+      textOutput("citations")
       
     )
     
