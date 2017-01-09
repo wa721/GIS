@@ -110,4 +110,7 @@ function(input,output){
     paste("Sources: TfL Unified API, 'Shiny' (Rstudio, 2016), 'Leaflet' (Cheng % Xie,2016), OpenStreetMap, ",citationList[as.numeric(input$dependentVariable)])
   })
 
+  output$KernelDensityDistribution <- renderPlot({
+    connectivityDist
+  })
 }

@@ -16,11 +16,12 @@ fluidPage(
     
     sidebarPanel(
       h2("Citywide Relationships"),
-      h6("There are some extreme data points that may have affected the reliability of the relationships presented below. To improve their reliability, theses extreme points are removed from consideration. This is standard practice in statistics."),
+      h6("Disclaimer: There are some extreme data points that may have affected the reliability of the relationships presented below. To improve their reliability, theses extreme points are removed from consideration. This is standard practice in statistics.
+         Also, please visit https://youtu.be/t8uyiZKw-DA for a short tutorial on interpreting this data."),
       textOutput("pointSelect"),
       plotOutput("relationPlot"),
       h1(" ",align="center"),
-      h5(textOutput("relation"),align = "center"),
+      h6(textOutput("relation"),align = "center"),
       h1(" ",align="center"),
       sliderInput("alpha","How sure do you want to be about the results? You can never reach 100% certainty with these models, sorry",75,99.99,75, step = 0.01, round = FALSE, locale = "us", ticks = TRUE, animate = FALSE),
       h1(" ",align = "center"),
@@ -29,6 +30,7 @@ fluidPage(
       h6("Scientists generally like to be at least 95% sure before suggesting that relationships 
             might actually exist. If they can only be less than 95% sure, scientists usually won't 
          say that a relationship exists.")
+      #plotOutput("KernelDensityDistribution")
     ),
   
     mainPanel(
@@ -52,14 +54,13 @@ fluidPage(
                                  ),selected = NULL,selectize=TRUE),
       h1(" ",align="center"),
       h5(textOutput("selectionNotification"),align="left"),
-      img(src="northSign.jpg", width = "5%", height = "5%",align = "right"),#source: https://s-media-cache-ak0.pinimg.com/originals/6a/13/8a/6a138ac687562414bdfcf7395d0dfae8.jpg
       #textOutput("selectionNotification2"),
       #textOutput("selectionNotification3"),
       #textOutput("selectionNotification4"),
       leafletOutput(outputId = "zoomPlot"),
       h6(textOutput("legendTitle"),align = "left"),
+      h6("For a tutorial on using the map component of this tool, visit https://youtu.be/N6okR-tYeLM"),
       textOutput("citations")
-      
     )
     
   )
