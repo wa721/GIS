@@ -17,7 +17,7 @@
 # Ensure all appropriate packages are installed and attached.
 rm(list=ls())
 
-'
+
 library(akima)
 library(curl)
 library(data.table)
@@ -26,7 +26,10 @@ library(ggplot2)
 library(ggmap)
 library(SDMTools)
 library(devtools)
+
 install_github("rstudio/leaflet")
+library(leaflet)
+
 library(RColorBrewer)
 library(shiny)
 library(datasets)
@@ -43,15 +46,15 @@ library(sp)
 library(spam)
 library(stats)
 library(utils)
-'
+library(rgdal)
 
 
 # Download the London Ward Profiles CSV. This is a copy of the data found at:
 #  https://data.london.gov.uk/dataset/ward-profiles-and-atlas
 
 WardData <- fread('https://raw.githubusercontent.com/wa721/TIIP/master/WardProfiles.csv')
-"Contains National Statistics data © Crown copyright and database right 2012
-Contains Ordnance Survey data © Crown copyright and database right 2012"
+#"Contains National Statistics data © Crown copyright and database right 2012
+#Contains Ordnance Survey data © Crown copyright and database right 2012"
 
 # Select the appopriate rows so as to ensure ward level data is only included. 
 
