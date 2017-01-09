@@ -46,6 +46,7 @@ library(spam)
 library(stats)
 library(utils)
 library(rgdal)
+library(yaml)
 
 
 # Download the London Ward Profiles CSV. This is a copy of the data found at:
