@@ -1,13 +1,14 @@
-User documentation.
-___________________
+USER DOCUMENTATION
+__________________
 
 This application requires R3.3.2 and runs best in R studio. 
 
-Prior to running ValuesScript, ensure all of the packages listed in the series of library() 
-statements are installed in your R studio browser. 
+Prior to running ValuesScript, ensure all of the packages listed in the series of library() statements are installed in your R studio browser. 
 
-Ensure you have cleared your global environment prior to running any scripts and 
-ensure your machine is connected to the internet.
+Ensure you have set your working directory to a folder containing the ValuesScript.R, ui.R and sever.R files, 
+With a subfolder titled www which contains the file northSign.png. 
 
-Video tutorials can be found as YouTube video urls in the shiny application for adivce on 
-nagvigating the application. 
+Ensure you have cleared your global environment prior to running any scripts and ensure your machine is connected to the internet.
+
+Video tutorials can be found as YouTube video urls in the shiny application for advice on navigating the application.
+
