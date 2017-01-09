@@ -26,10 +26,9 @@ library(ggplot2)
 library(ggmap)
 library(SDMTools)
 library(devtools)
-
+library(colorspace)
 install_github("rstudio/leaflet")
 library(leaflet)
-
 library(RColorBrewer)
 library(shiny)
 library(datasets)
@@ -150,7 +149,6 @@ interpolatedinc <- interp(lon,
                           extrap=TRUE,
                           duplicate='error',
                           dupfun=NULL,
-                          ncp=NULL,
                           nx=l,
                           ny=l)
 
@@ -167,7 +165,6 @@ interpolatedmage <- interp(lon,
                            extrap=TRUE,
                            duplicate='error',
                            dupfun=NULL,
-                           ncp=NULL,
                            nx=l,
                            ny=l)
 
@@ -184,7 +181,6 @@ interpolatedemplo <- interp(lon,
                             extrap=TRUE,
                             duplicate='error',
                             dupfun=NULL,
-                            ncp=NULL,
                             nx=l,
                             ny=l)
 
@@ -201,7 +197,6 @@ interpolatedcars <- interp(lon,
                            extrap=TRUE,
                            duplicate='error',
                            dupfun=NULL,
-                           ncp=NULL,
                            nx=l,
                            ny=l)
 
@@ -218,7 +213,7 @@ interpolatedpopu <- interp(lon,
                            extrap=TRUE,
                            duplicate='error',
                            dupfun=NULL,
-                           ncp=NULL,
+                           
                            nx=l,
                            ny=l)
 
@@ -234,8 +229,6 @@ interpolatedBikeUse <- interp(lon,
                               linear=FALSE,
                               extrap=TRUE,
                               duplicate='error',
-                              dupfun=NULL,
-                              ncp=NULL,
                               nx=l,
                               ny=l)
 
@@ -251,8 +244,6 @@ interpolatedHousePrices <- interp(lon,
                                   linear=FALSE,
                                   extrap=TRUE,
                                   duplicate='error',
-                                  dupfun=NULL,
-                                  ncp=NULL,
                                   nx=l,
                                   ny=l)
 
@@ -268,8 +259,6 @@ interpolatedEmployedPeople <- interp(lon,
                                      linear=FALSE,
                                      extrap=TRUE,
                                      duplicate='error',
-                                     dupfun=NULL,
-                                     ncp=NULL,
                                      nx=l,
                                      ny=l)
 
@@ -286,7 +275,6 @@ interpolatedBAME <- interp(lon,
                            extrap=TRUE,
                            duplicate='error',
                            dupfun=NULL,
-                           ncp=NULL,
                            nx=l,
                            ny=l)
 
@@ -303,7 +291,6 @@ interpolatedSocialHousing <- interp(lon,
                                     extrap=TRUE,
                                     duplicate='error',
                                     dupfun=NULL,
-                                    ncp=NULL,
                                     nx=l,
                                     ny=l)
 
@@ -320,7 +307,6 @@ interpolatedJobSeekers <- interp(lon,
                                  extrap=TRUE,
                                  duplicate='error',
                                  dupfun=NULL,
-                                 ncp=NULL,
                                  nx=l,
                                  ny=l)
 
@@ -337,7 +323,6 @@ interpolatedVoterTurnout <- interp(lon,
                                    extrap=TRUE,
                                    duplicate='error',
                                    dupfun=NULL,
-                                   ncp=NULL,
                                    nx=l,
                                    ny=l)
 
@@ -354,7 +339,6 @@ interpolatedWorkingAge <- interp(lon,
                                  extrap=TRUE,
                                  duplicate='error',
                                  dupfun=NULL,
-                                 ncp=NULL,
                                  nx=l,
                                  ny=l)
 
@@ -371,7 +355,6 @@ interpolatedDeprivationRank <- interp(lon,
                                       extrap=TRUE,
                                       duplicate='error',
                                       dupfun=NULL,
-                                      ncp=NULL,
                                       nx=l,
                                       ny=l)
 interpolatedCrime <- interp(lon,
@@ -387,7 +370,7 @@ interpolatedCrime <- interp(lon,
                             extrap=TRUE,
                             duplicate='error',
                             dupfun=NULL,
-                            ncp=NULL,
+                            
                             nx=l,
                             ny=l)
 
