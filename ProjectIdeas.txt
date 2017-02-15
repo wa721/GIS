@@ -1,0 +1,37 @@
+\\Data science applications to Road Surface management & traffic. 
+
+Traffic signal data
+-> Record user data from TfL for this. 
+-> Bus data from TfL 
+-> Diagnostic on the junction
+
+Trads highways counts data. 
+-> every hour a count is retrived. 
+->
+
+Multistorey parking data:
+-> 
+-> 
+
+Road safety.
+	Traffic incident data. 
+	ML for incidents and other variables.
+	Use for predictive analytics.
+	Near misses. 
+
+Adaptation for autonomous vehicles. 
+	-> reach out to Tesla for anonomysed London data. 
+	-> 
+
+Congestion.   
+
+Removal of equipment (traffic signals ,bus stops, etc).
+-> is it necessary 
+
+Lawsuits:
+-> Infrastructure systems designed based on predictive analytics. 
+-> predicting revenue for a road. 
+
+Driving behaviour through ML
+
+ 
