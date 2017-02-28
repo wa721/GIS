@@ -53,8 +53,8 @@ library(yaml)
 #  https://data.london.gov.uk/dataset/ward-profiles-and-atlas
 
 WardData <- fread('https://raw.githubusercontent.com/wa721/TIIP/master/WardProfiles.csv')
-#"Contains National Statistics data © Crown copyright and database right 2012
-#Contains Ordnance Survey data © Crown copyright and database right 2012"
+#"Contains National Statistics data Â© Crown copyright and database right 2012
+#Contains Ordnance Survey data Â© Crown copyright and database right 2012"
 
 # Select the appopriate rows so as to ensure ward level data is only included. 
 
@@ -914,7 +914,7 @@ mIncome <- leaflet(TubeStations) %>%
     fillOpacity = 1, 
     popup = paste("Name: ",TubeStations$CommonName,"," ," Lines: ",TubeStations$Line,","," Average Household Income in Pounds: ", round(TubeStations$Income,digits=0)))%>%
   addLegend("bottomright", pal = palIncome, values = TubeStations$Income,
-            labFormat = labelFormat(prefix = "£"),
+            labFormat = labelFormat(prefix = "Â£"),
             opacity = 1)%>%
   addScaleBar(position = "bottomleft")%>%
   addControl(img(src="northSign.png"),position = "topright")
@@ -991,7 +991,7 @@ mHousePrices <- leaflet(TubeStations) %>%
     fillOpacity = 1, 
     popup = paste("Name: ",TubeStations$CommonName,","," Lines: ",TubeStations$Line,","," Average house price: ",round(TubeStations$HousePrices,digits=0)))%>%
   addLegend("bottomright", pal = palHousePrices, values = TubeStations$HousePrices,
-            opacity = 1, labFormat = labelFormat(prefix = "£"))%>%
+            opacity = 1, labFormat = labelFormat(prefix = "Â£"))%>%
   addScaleBar(position = "bottomleft")%>%
   addControl(img(src="northSign.png"),position = "topright")
 
